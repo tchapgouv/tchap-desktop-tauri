@@ -20,6 +20,11 @@ source "$HOME/.cargo/env
 cargo install tauri-cli
 ```
 - Télécharger une release de Tchap Web et placer le contenu de dist dans src
+```
+curl https://github.com/tchapgouv/tchap-web-v4/releases/download/tchap-4.1.0_1.11.10/tchap-4.1.0_1.11.10-prod-20221107.tar.gz
+tar -xvf tchap-4.1.0_1.11.10-prod-20221107.tar.gz
+mv dist src
+```
 - Compiler tchap pour votre système
 ```
 cd src-tauri
