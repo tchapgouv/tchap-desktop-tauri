@@ -31,4 +31,10 @@ cd src-tauri
 cargo tauri build
 ```
 
+### Problèmes
 
+Avec l'app en AppImage :
+- Impossible de remettre l'application en avant dans certain cas à partir de la tray icon
+- Pas de son/video
+- Pas de téléchargement
+- Pas d'upload de fichier
