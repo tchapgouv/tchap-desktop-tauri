@@ -24,6 +24,7 @@ fn main() {
     let system_tray = SystemTray::new()
         .with_menu(tray_menu);
     tauri::Builder::default()
+        .plugin(tauri_plugin_persisted_scope::init())
         .system_tray(system_tray)
         .on_system_tray_event(|app, event| match event {
             SystemTrayEvent::MenuItemClick { id, .. } => {
@@ -33,7 +34,7 @@ fn main() {
                         std::process::exit(0);
                     }
                     SHOW_ITEM_ID => {
-                       if !window.is_visible() {
+                       if !window.is_visible().unwrap() {
                             window.show().unwrap();
                        }
                        window.set_focus().unwrap();
